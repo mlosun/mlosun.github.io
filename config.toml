@@ -54,10 +54,10 @@ pygmentscodefencesguesssyntax = true
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 [params.valine]
-  enable = false
-  appId = ""
-  appKey = ""
-  placeholder = " "
+  enable = true
+  appId = "x3OniavxUWEtE0kPmFKr2Tz0-9Nh9j0Va"
+  appKey = "1g8MfC9uH4tEg9OkXXusHTT1"
+  placeholder = "期待你一针见血的评论，Come on！"
   visitor = true
 
 # Your socail's url
