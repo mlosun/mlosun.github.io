@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛森" />
+	
+	
+	
+	<title>使用Hugo&#43;Github Actions实现自动化部署博客 ｜ 洛森博客</title>
+	
+    
+    
+    <meta name="description" content="很早就想搭建一个自己的博客了，因为某些原因一直为付诸行动。直到近期自己对建博的需求愈发强烈，在尝试过了各类流行的方案后，选择Hugo&#43;Github Action来实现静态博客的自动化部署。这里也将整理过" />
+    
+
+    
+    
+    <meta name="keywords" content="洛森博客, 博客, mlosun" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://www.mlosun.com/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://www.mlosun.com/">
+                    <span>洛森博客</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">念念不忘,必有回响</p>
+            <div class="my_socials">
+                
+                <a href="https://www.mlosun.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/hugo-github-actions/'>使用Hugo&#43;Github Actions实现自动化部署博客</a></h2>
+                        <span class="date">2020.08.27</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>很早就想搭建一个自己的博客了，因为某些原因一直为付诸行动。直到近期自己对建博的需求愈发强烈，在尝试过了各类流行的方案后，选择Hugo+Github Action来实现静态博客的自动化部署。这里也将整理过的流程记录下来，也作为新博客的第一篇文章。</p>
+</blockquote>
+<h1 id="一环境准备">一、环境准备</h1>
+<p>安装<a href="https://git-scm.com">Git</a>、<a href="https://gohugo.io">Hugo</a>，注册<a href="https://github.com">Github</a>账号，网上教程很多就不再赘述，我使用MacOS系统，Windows系统用户可自行调整。</p>
+<p>注：请自行将下文中的<code>My_blog</code>、<code>mlosun</code>替换为自己的仓库名、站点名、文件夹名、用户名</p>
+<h1 id="二初始化hugo项目">二、初始化Hugo项目</h1>
+<h2 id="1新建站点">1.新建站点</h2>
+<p>本地安装好各类环境后，终端通过<code>hugo new site My_blog</code>新建站点，生成hugo站点的默认目录，目录树如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">My_blog  
+├─ archetypes     
+│  └─ default.md  
+├─ content        
+├─ data           
+├─ layouts        
+├─ static         
+├─ themes         
+└─ config.toml    
+</code></pre></div><h2 id="2安装主题">2.安装主题</h2>
+<p>Hugo默认不带主题，可以在<a href="https://themes.gohugo.io">官方主题仓库</a>选择喜欢的主题，本次我使用了国产的<a href="https://themes.gohugo.io/hugo-theme-zozo/">Zozo主题</a>，在主题页面下载好主题文件后，将主题文件复制到<code>themes</code>文件夹下，并重命名为<code>zozo</code>，并将主题的示例文件<code>exampleSite</code>目录下的示例文件复制到项目根目录下替换原有文件：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">My_blog
+├─ archetypes                          
+│  └─ default.md                       
+├─ content                             
+│  ├─ about                            
+│  │  └─ index.md                      
+│  └─ posts                            
+│     ├─ chinese-preview.md            
+│     ├─ english-preview.md                 
+│     ├─ japanese-preview.md           
+│     └─ theme-preview.md              
+├─ data                                
+├─ layouts                                                 
+├─ static                              
+│  ├─ 100.jpg                                                    
+├─ themes                              
+│  └─ zozo                                          
+│     └─ 主题文件                   
+├─ config.toml                         
+└─ netlify.toml                        
+</code></pre></div><p>终端进入项目目录<code>cd My_blog</code>，输入<code>hugo server -D -w</code>命令后，在浏览器中访问<a href="http://localhost:1313">http://localhost:1313</a>进行预览。</p>
+<p>若没有问题，初始化Hugo项目完成。</p>
+<h1 id="三git仓库配置">三、Git仓库配置</h1>
+<p>在Github上创建名为<code>My_blog</code>的公开仓库，创建时无需进行初始化</p>
+<p>依次在终端中执行以下命令：</p>
+<ol>
+<li><code>git init</code>初始化仓库</li>
+<li><code>git remote add origin https://github.com/mlosun/My_blog.git</code>连接远端仓库</li>
+<li><code>git checkout -b develop</code>切换至develop分支（<a href="https://weibo.com/ttarticle/p/show?id=2309404516196870390640">不使用master分支的原因？</a>）</li>
+<li><code>git add .</code>暂存全部文件</li>
+<li><code>git commit -m &quot;first commit&quot;</code>提交</li>
+<li><code>git push -u origin develop</code>推送到远端仓库</li>
+</ol>
+<p>执行完毕后去Github上看下文件是否都已上传，顺手在Github上新建一个<code>gh-pages</code>分支</p>
+<h1 id="四自动化部署">四、自动化部署</h1>
+<p>在Github中的<a href="https://github.com/settings/tokens">创建一个Token</a>(记得在页面关闭前保存下来，页面一旦关闭就再也看不到了),回到<code>My_blog</code>项目仓库中在<code>Settings/Secrets</code>创建一个<code>Secrets</code>，标题命名为<code>personal_token</code>，内容填入刚刚创建的<code>Token</code>。</p>
+<p>本地<code>My_blog</code>目录中新建<code>.github/workflows/deploy.yml</code>，内容填入以下代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">name: Deploy Hugo
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1  # v2 does not have submodules option now
+        # with:
+          # submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          # extended: true
+
+      - name: Build
+        run: hugo
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.personal_token }} # 这里的 ACTIONS_DEPLOY_KEY 则是上面设置 Private Key的变量名
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./public
+          commit_message: ${{ github.event.head_commit.message }}
+</code></pre></div><p>依次在终端中执行以下命令：</p>
+<ol>
+<li><code>git add .</code>暂存全部文件</li>
+<li><code>git commit -m &quot;Github Action自动化部署&quot;</code>提交</li>
+<li><code>git push -u origin develop</code>推送到远端仓库</li>
+</ol>
+<p>等待Github仓库中Actions<code>Deploy Hugo</code>执行完毕后，看下<code>gh-pages</code>分支是否已生成HTML文件。</p>
+<h1 id="五其他补充内容">五、其他补充内容</h1>
+<h2 id="1绑定域名">1.绑定域名</h2>
+<p>在本地<code>static</code>目录下新建<code>CNAME</code>文件，内容填入绑定的域名<code>www.mlosun.com</code>，同时也需要将域名解析至<code>mlosun.github.io.</code></p>
+<p>后依次在终端中执行：</p>
+<ol>
+<li><code>git add .</code>暂存全部文件</li>
+<li><code>git commit -m &quot;绑定域名&quot;</code>提交</li>
+<li><code>git push -u origin develop</code>推送到远端仓库</li>
+</ol>
+<h2 id="2修改主题配置">2.修改主题配置</h2>
+<p>修改<code>confit.toml</code>文件，之前从<a href="https://themes.gohugo.io/hugo-theme-zozo/">Zozo主题</a>复制过来的<code>My_blog/confit.toml</code>文件中对大部分配置都有详细的注释说明，根据自己情况修改即可</p>
+<p>注：<code>baseURL</code>字段记得必须修改，否则页面会无法加载样式</p>
+<p>后依次在终端中执行：</p>
+<ol>
+<li><code>git add .</code>暂存全部文件</li>
+<li><code>git commit -m &quot;修改主题配置&quot;</code>提交</li>
+<li><code>git push -u origin develop</code>推送到远端仓库</li>
+</ol>
+<h2 id="3开启valine评论">3.开启Valine评论</h2>
+<p>在<code>confit.toml</code>文件中找到<code>[params.valine]</code>部分，填入从<a href="https://www.leancloud.cn">LeanCloud</a>获取到的AppID和AppKey，将<code>enable</code>更改为<code>true</code>即可</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[params.valine]
+  enable = true
+  appId = &#34;&#34;
+  appKey = &#34;&#34;
+  placeholder = &#34;期待你一针见血的评论，Come on！&#34;
+  visitor = true
+</code></pre></div><p>后依次在终端中执行：</p>
+<ol>
+<li><code>git add .</code>暂存全部文件</li>
+<li><code>git commit -m &quot;开启Valine评论&quot;</code>提交</li>
+<li><code>git push -u origin develop</code>推送到远端仓库</li>
+</ol>
+<h2 id="3访问测试">3.访问测试</h2>
+<p>尝试访问<a href="https://www.mlosun.com">www.mlosun.com</a>，看是否能顺利打开，页面显示是否正常等.</p>
+<h1 id="六参考资料">六、参考资料</h1>
+<ul>
+<li><a href="https://immmmm.com/hugo-github-actions/">Hugo + Github Actions 实现自动化部署</a></li>
+<li><a href="https://www.nashome.cn/posts/hugo-github-actions/">用 Hugo 配合 Github Actions 自动构建我的博客</a></li>
+<li><a href="https://piggy.site/posts/deploy-hugo-on-github-pages/">Deploy Hugo on Github Pages</a></li>
+</ul>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://www.mlosun.com/tags/hugo/">hugo</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/github/">github</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://www.mlosun.com/css/comments.css" />
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'x3OniavxUWEtE0kPmFKr2Tz0-9Nh9j0Va',
+        appKey: '1g8MfC9uH4tEg9OkXXusHTT1',
+        placeholder: '期待你一针见血的评论，Come on！',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>念念不忘,必有回响</span>
+    </div>
+</footer>
+    <script src="https://www.mlosun.com/js/jquery-3.5.1.min.js"></script>
+<link href="https://www.mlosun.com/css/fancybox.min.css" rel="stylesheet">
+<script src="https://www.mlosun.com/js/fancybox.min.js"></script>
+<script src="https://www.mlosun.com/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>
