@@ -1,7 +1,7 @@
-baseURL = "http://localhost:1313/"
-languageCode = "en"
-defaultContentLanguage = "en"
-title = "ZO ZO"                         # site title  # 网站标题
+baseURL = "https://www.mlosun.com/"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+title = "洛森博客"                         # site title  # 网站标题
 theme = "zozo"
 hasCJKLanguage = true                  # has chinese/japanese/korean ?  # 自动检测是否包含 中文\日文\韩文
 summaryLength = 100
@@ -15,7 +15,7 @@ pygmentCodeFences = true
 pygmentscodefencesguesssyntax = true
 
 [author]                               # essential                     # 必需
-  name = "VarKai"
+  name = "洛森"
 
 [blackfriday]
   smartypants = false
@@ -42,10 +42,10 @@ pygmentscodefencesguesssyntax = true
   url = "/about/"
 
 [params]
-  subTitle = "the site subtitle"                                       # site's subTitle  # 网站二级标题
-  footerSlogan = "My spiritual home"                                   # site's footer slogan  # 网站页脚标语
-  keywords = ["Hugo","theme","zozo"]                                  # site's keywords  # 网站关键字
-  description = "Hugo theme zozo example site."                        # site's description  # 网站描述
+  subTitle = "念念不忘,必有回响"                                       # site's subTitle  # 网站二级标题
+  footerSlogan = "念念不忘,必有回响"                                   # site's footer slogan  # 网站页脚标语
+  keywords = ["洛森博客","博客","mlosun"]                                  # site's keywords  # 网站关键字
+  description = "洛森的个人博客｜念念不忘,必有回响"                        # site's description  # 网站描述
   enableMathJax = true                                                 # enable mathjax  # 是否使用mathjax（数学公式）
   enableSummary = true                                                 # display the article summary  # 是否显示文章摘要
   mainSections = ["posts","post"]
@@ -62,11 +62,11 @@ pygmentscodefencesguesssyntax = true
 
 # Your socail's url
 [social]
-  github = " "
-  twitter = " "
-  facebook = " "
-  weibo = " "
-  instagram = " "
+#  github = " "
+#  twitter = " "
+#  facebook = " "
+#  weibo = " "
+#  instagram = " "
 
 [markup]
 [markup.goldmark]
