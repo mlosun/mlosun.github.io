@@ -29,5 +29,14 @@
       <description>很早就想搭建一个自己的博客了，因为某些原因一直为付诸行动。直到近期自己对建博的需求愈发强烈，在尝试过了各类流行的方案后，选择Hugo+Github Action来实现静态博客的自动化部署。这里也将整理过</description>
     </item>
     
+    <item>
+      <title>新生儿建立睡眠规律的实践与心得</title>
+      <link>https://www.mlosun.com/posts/newborn-establish-sleep-pattern/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/newborn-establish-sleep-pattern/</guid>
+      <description>6月底自家宝宝出生后，在经历过无数新生儿常见的折腾后，终于随着7月底月嫂阿姨的离开，正式进入了亲自带娃的阶段。其中最痛苦的莫过于哄睡。都知道宝宝在前几个月需要每天有较长睡眠来保障大脑的发育，但随着月嫂</description>
+    </item>
+    
   </channel>
 </rss>
