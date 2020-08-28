@@ -26,7 +26,7 @@
       <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.mlosun.com/about/</guid>
-      <description>本站使用的服务 「程序」Hugo：https://gohugo.io 「主题」Zozo：https://themes.gohugo.io/hugo-theme-zozo/ 「平台」Github：https:</description>
+      <description>我的命名规范 为了便于日后管理，将自己的一些命名规范记录在这边，方便日后查阅。 1.Github Token 规范：for &amp;lt;仓库名&amp;gt; &amp;amp; &amp;lt;域名&amp;gt; &amp;amp; &amp;lt;程序&amp;gt; 记录： for My_blog &amp;amp; Mlosun.com &amp;amp; Hugo Github Actions自动化部</description>
     </item>
     
   </channel>
