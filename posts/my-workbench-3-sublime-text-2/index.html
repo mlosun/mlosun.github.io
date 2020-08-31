@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛森" />
+	
+	
+	
+	<title>配置自己的工作环境（三）Sublime Text 2 的安装与配置 ｜ 洛森博客</title>
+	
+    
+    
+    <meta name="description" content="写在前面的话： Windows下的文本（代码）编辑器多不胜数，如Notepad&#43;&#43;、Editplus等等。但选择哪一款在于自己的习惯，博主在这里选择的是号称性感无比的代码编辑器Sublime Text 2 （via" />
+    
+
+    
+    
+    <meta name="keywords" content="洛森博客, 博客, mlosun" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://www.mlosun.com/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://www.mlosun.com/">
+                    <span>洛森博客</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">念念不忘,必有回响</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/mlosun" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://www.mlosun.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/my-workbench-3-sublime-text-2/'>配置自己的工作环境（三）Sublime Text 2 的安装与配置</a></h2>
+                        <span class="date">2014.05.06</span>
+                    </div>
+                    <div class="post_content markdown"><p>写在前面的话：</p>
+<blockquote>
+<p>Windows下的文本（代码）编辑器多不胜数，如Notepad++、Editplus等等。但选择哪一款在于自己的习惯，博主在这里选择的是号称性感无比的代码编辑器Sublime Text 2 （<a href="http://www.iplaysoft.com/sublimetext.html">via</a>）</p>
+</blockquote>
+<p>对于性感的软件，博主的定义有3：</p>
+<ol>
+<li>界面美观漂亮</li>
+<li>启动&amp;操作速度顺畅</li>
+<li>可扩展（插件及主题）</li>
+</ol>
+<p>很幸运的，Sublime Text 2全都符合，下面开始：</p>
+<h1 id="下载及安装">下载及安装</h1>
+<p>Sublime Text 2 是一款商业收费软件，价格甚至高达59美刀。不过不用担心，作者很厚道的提供了免费无限制无限期的试用权，也就是说，除了偶尔（频率非常低）会弹出提示你没有购买之外，你可以永久免费的使用该软件的全功能没有任何问题。</p>
+<p>官方下载地址：<a href="http://www.sublimetext.com/2">http://www.sublimetext.com/2 </a>（Sublime Text 3 目前还在测试版，现在推荐2）</p>
+<p>下载完成后正常安装即可，养成修改安装路径的好习惯，我习惯安装在<code>D:\Program Files\</code> 目录下。</p>
+<p>安装完毕后即可打开 Sublime Text 2 软件。咦，是英文界面？那就对了…</p>
+<p>中文语言包及汉化教程下载：<a href="http://pan.baidu.com/s/1i340ikX">http://pan.baidu.com/s/1i340ikX</a></p>
+<p>PS：这个语言包将插件翻译为了“程序包”，其实这才是最准确的，原单词为 Package 。</p>
+<p>安装语言包后再打开，是中文了吧。安装结束，体验吧！</p>
+<h1 id="技巧及插件">技巧及插件</h1>
+<p>这些也是 Sublime Text 2 最性感的地方了。</p>
+<ul>
+<li>我常用的颜色主题：Monokai</li>
+<li>安装Package Control
+<ol>
+<li>
+<p>点击查看-显示控制台（快捷键Ctrl+`）</p>
+</li>
+<li>
+<p>粘贴以下代码到底部命令行并回车</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">import urllib2,os;pf=&#39;Package Control.sublime-package&#39;;ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublime.wbond.net/&#39;+pf.replace(&#39; &#39;,&#39;%20&#39;)).read())
+</code></pre></div></li>
+<li>
+<p>重启Sublime Text 2</p>
+</li>
+<li>
+<p>如果在Perferences-&gt;package settings中看到package control这一项，则安装成功。</p>
+</li>
+</ol>
+</li>
+<li>使用Package Control
+<ol>
+<li>按下Ctrl+Shift+P调出命令面板</li>
+<li>输入install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件。</li>
+<li>即可以在线查找及安装插件了</li>
+</ol>
+</li>
+</ul>
+<p>ok，下面开始介绍插件，由于网上存在很多的插件介绍，博主这里只介绍自己使用的一些：</p>
+<ul>
+<li>
+<p>Gist：Sublime Text 2 + Gist = 代码片段管理器（<a href="http://lucifr.com/2012/03/07/sublime-text-2-plus-gist-equal-snippet-manager/">via</a>）</p>
+<blockquote>
+<p>PS：原始的填入 Gist 账户名及密码来验证GitHub账户的方式已失效 （<a href="https://github.com/condemil/Gist#generating-access-token">via</a>）新的验证方式步骤如下：</p>
+<ol>
+<li>进入<a href="https://github.com/settings/applications">https://github.com/settings/applications</a></li>
+<li>点击 Create New Token 创建一个新的Token，可以使用Gist for Sublime Text 2这样d描述来区分</li>
+<li>打开 Sublime Text 2 里的Gist插件配置页面，填入token:XXXXXXXXXXXXX，保存即可</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p>WordPress：集成一些WordPress的函数，对于像我这种经常要写WP模版和插件的人特别有用！</p>
+</li>
+<li>
+<p>Markdown Preview：通过sublime text2来编辑markdown（<a href="http://www.1008a.com/post/679.html">via</a>）</p>
+<blockquote>
+<p>Sublime Text 2自带的主题风格中没有Markdown语法的高亮功能
+Markdown语法高亮主题下载：<a href="http://pan.baidu.com/s/1eQoXpz8">http://pan.baidu.com/s/1eQoXpz8</a></p>
+</blockquote>
+</li>
+<li>
+<p>……先列举这么多</p>
+</li>
+</ul>
+<p>ok，关于 Sublime Text 2 的介绍和使用教程到此结束！</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://www.mlosun.com/tags/%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/">工作环境</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/sublime-text-2/">Sublime Text 2</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://www.mlosun.com/css/comments.css" />
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'x3OniavxUWEtE0kPmFKr2Tz0-9Nh9j0Va',
+        appKey: '1g8MfC9uH4tEg9OkXXusHTT1',
+        placeholder: '期待你一针见血的评论，Come on！',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>念念不忘,必有回响</span>
+    </div>
+</footer>
+    <script src="https://www.mlosun.com/js/jquery-3.5.1.min.js"></script>
+<link href="https://www.mlosun.com/css/fancybox.min.css" rel="stylesheet">
+<script src="https://www.mlosun.com/js/fancybox.min.js"></script>
+<script src="https://www.mlosun.com/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-175449293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime Text 2 on 洛森博客</title>
+    <link>https://www.mlosun.com/tags/sublime-text-2/</link>
+    <description>Recent content in Sublime Text 2 on 洛森博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.mlosun.com/tags/sublime-text-2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>配置自己的工作环境（三）Sublime Text 2 的安装与配置</title>
+      <link>https://www.mlosun.com/posts/my-workbench-3-sublime-text-2/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/my-workbench-3-sublime-text-2/</guid>
+      <description>写在前面的话： Windows下的文本（代码）编辑器多不胜数，如Notepad++、Editplus等等。但选择哪一款在于自己的习惯，博主在这里选择的是号称性感无比的代码编辑器Sublime Text 2 （via</description>
+    </item>
+    
+  </channel>
+</rss>
