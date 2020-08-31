@@ -19,7 +19,7 @@ draft: false
 - Github Actions自动化部署，使用在仓库`Setting/Secrets`的`PERSONAL_TOKEN`中
 - ——————
 - `for My_images & Images.Mlosun.com & PicGo `
-- VS Code + PicGo图床，使用在VS Code中PicGo扩展`Github: Token`中
+- PicGo+Github图床，使用在PicGo应用`Github Token`中
 
 ## 本站使用的服务
 
