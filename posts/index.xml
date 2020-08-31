@@ -74,5 +74,14 @@
       <description>初接触git，看了很多msysgit的使用教程，对于没太接触过相关内容的我深感糊涂。虽然最后也能使用git配合GitHub进行简单的操作，但还是感到过程对于我来说甚是麻烦。 突然不小心发现了GitHub</description>
     </item>
     
+    <item>
+      <title>配置自己的工作环境（一） 序言</title>
+      <link>https://www.mlosun.com/posts/my-workbench-1-preface/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/my-workbench-1-preface/</guid>
+      <description>缘由 博主是一个很乱的人。电脑桌面、硬盘、移动硬盘；图片、视频、代码、文档；账号密码；软件配置；收集器等各种乱，一塌糊涂。 很喜欢在网上搜罗各种资料搜集整理的办法以及工作环境习惯的帖子，实践过GTD，分类</description>
+    </item>
+    
   </channel>
 </rss>
