@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛森" />
+	
+	
+	
+	<title>配置自己的工作环境（六）使用Github&#43;hexo搭建静态博客 ｜ 洛森博客</title>
+	
+    
+    
+    <meta name="description" content="搭建一个博客和配置自己的工作环境有什么关系？ 博主认为，是为了更好的进行知识系统的管理，当然你也可以说我有印象笔记等等工具。但我想说的是在互联网上混，你离得开交流与互动么？ 搭建博客的程序很多，Wordp" />
+    
+
+    
+    
+    <meta name="keywords" content="洛森博客, 博客, mlosun" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://www.mlosun.com/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://www.mlosun.com/">
+                    <span>洛森博客</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">念念不忘,必有回响</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/mlosun" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://www.mlosun.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/my-workbench-5-hexo-blog/'>配置自己的工作环境（六）使用Github&#43;hexo搭建静态博客</a></h2>
+                        <span class="date">2014.05.06</span>
+                    </div>
+                    <div class="post_content markdown"><p>搭建一个博客和配置自己的工作环境有什么关系？</p>
+<p>博主认为，是为了更好的进行知识系统的管理，当然你也可以说我有印象笔记等等工具。但我想说的是在互联网上混，你离得开交流与互动么？</p>
+<p>搭建博客的程序很多，Wordpress、Zblog、jekyll、Octopress、hexo等等。前两者是传统的博客程序，需要主机有php或者asp环境支持。但后三者是静态的博客程序，任何的静态服务器都可以搭建，我们今天就用Github提供的Pages服务来部署我们的Hexo博客。</p>
+<p><strong>Why Hexo？</strong></p>
+<blockquote>
+<p>不可思议的快速 ─ 只要一眨眼静态文件即生成完成 支持 Markdown
+仅需一道指令即可部署到 GitHub Pages 和 Heroku
+已移植 Octopress 插件 高扩展性、自订性 兼容于 Windows, Mac &amp; Linux
+——<a href="http://zespia.tw/blog/2012/10/11/hexo-debut/">tommy351</a>（Hexo作者）</p>
+</blockquote>
+<p>&amp;</p>
+<blockquote>
+<p>易用。不仅部署简单，平时使用中仅需要<code>hexo new</code> <code>hexo generate</code> <code>hexo server</code> <code>hexo deploy</code>四个命令。
+轻。文件少、小，易理解，方便自定义。
+用户多。虽然赶不上Jekyll和Octopress，但遇到什么问题都能搜索到答案，或者找到同样使用hexo的用户进行参考和咨询。
+——<a href="http://zipperary.com/2013/05/28/hexo-guide-1/">zippera</a></p>
+</blockquote>
+<h1 id="搭建一个本地的hexo博客">搭建一个本地的Hexo博客</h1>
+<blockquote>
+<p>注意：本节教程只针对Windows用户。</p>
+</blockquote>
+<h2 id="安装-git-和-nodejshttpnodejsorg">安装 Git 和 <a href="http://nodejs.org/">Node.js</a></h2>
+<blockquote>
+<p>Git 以及 TortoiseGit 的下载安装上节已经说过，这里不再重复</p>
+</blockquote>
+<p>Node.js的安装也十分简单，只需要在官网上点击<code>Install</code>即可自动下载安装文件并执行即可安装。</p>
+<h2 id="安装hexo">安装Hexo</h2>
+<p>在任意位置点击鼠标右键，选择Git bash，然后输入以下命令并回车，即可安装</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">npm install -g hexo
+</code></pre></div><h2 id="创建hexo和初始化">创建Hexo和初始化</h2>
+<p>安装完成后，在你喜爱的文件夹下（我选择的是E:\MyWork\hexo），在是E:\MyWork\hexo内点击鼠标右键，选择Git bash，输入以下命令并回车，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hexo init
+</code></pre></div><p>你也可以在任意地方右键打开Git bash，输入</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hexo init E:\MyWork\hexo
+</code></pre></div><p>也是同样的效果（无须手动创建Hexo文件夹）</p>
+<h2 id="搭建完成本地查看">搭建完成&amp;本地查看</h2>
+<p>ok，一个Hexo博客就已经在本地搭建完成了，是不是很简单？</p>
+<p>接下来让我们在本地浏览一下Hexo博客吧，在E:\MyWork\hexo的Git bash里执行命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hexo generate
+hexo server
+</code></pre></div><p>在浏览器输入<a href="http://localhost:4000/">http://localhost:4000/</a>就可以打开了。</p>
+<p>现在我们的Hexo博客虽然搭建好了，但只是在本地，别人可看不到，所以我们需要将博客部署到Github。</p>
+<h1 id="部署到github">部署到Github</h1>
+<h2 id="创建github帐户及仓库">创建Github帐户及仓库</h2>
+<p>注册一个<a href="http://www.github.com/">Github</a>账号，新建一个repository（仓库）。</p>
+<blockquote>
+<p>注意repository的命名应该是<code>mlosun.github.com</code>将mlosun替换为你的用户名。</p>
+</blockquote>
+<h2 id="配置hexo博客">配置Hexo博客</h2>
+<p>编辑_config.yml(在E:\MyWork\hexo下)。你在编辑时，要把下面的mlosun都换成你的账号名。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">deploy:
+  type: github
+  repository: https://github.com/mlosun/mlosun.github.com.git
+  branch: master
+</code></pre></div><p>编辑完保存后在E:\MyWork\hexo下执行以下命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hexo generate
+hexo deploy
+</code></pre></div><p>ok，略等10分钟（Github第一次部署网站需要10分钟配置时间）打开网址<a href="http://mlosun.github.com">http://mlosun.github.com</a> 是不是发现你的网页已经部署上去了？</p>
+<p>是不是很简单？</p>
+<p>接下来再说几个要点。</p>
+<h2 id="绑定域名">绑定域名</h2>
+<p>现在你可以通过<a href="http://mlosun.github.com">http://mlosun.github.com</a>来访问你的博客，但是我们想要通过<a href="http://mlosun.com/">http://mlosun.com/</a>来访问怎么办？</p>
+<p>在你的E:\MyWork\hexo\source创建名为<code>CNAME</code>的文件，内容里写入<code>mlosun.com</code>，保存后重新执行以下命令即可。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hexo generate
+hexo deploy
+</code></pre></div><p>同时把你的域名解析做CNAME解析到<code>mlosun.github.io.</code>把用户名换成你自己的</p>
+<p>等解析生效后打开<a href="http://mlosun.com/">http://mlosun.com/</a>看看是不是成功了？</p>
+<h1 id="使用hexo">使用Hexo</h1>
+<h2 id="_configyml文件配置">_config.yml文件配置</h2>
+<p><code>_config.yml</code>文件是Hexo博客的全局配置文件，里面每个参数都可以自行修改，具体代表的意义参考<a href="http://hexo.io/docs/configuration.html">http://hexo.io/docs/configuration.html</a></p>
+<h2 id="发表新文章">发表新文章</h2>
+<p>好了，站点配置好了，我想发表一篇文章，怎么做呢？</p>
+<ol>
+<li>
+<p>在E:\MyWork\hexo路径下执行命令hexo new &ldquo;my new post&rdquo;</p>
+</li>
+<li>
+<p>在E:\MyWork\hexo\source_posts中打开这个文件，建议使用Sublime Text 2打开</p>
+</li>
+<li>
+<p>文件的开头配置格式（一定要配置，不然无法生成新文章）</p>
+</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">title: my new post #可以改成中文的，如“新文章” 
+date: 2014-05-06 07:56:29
+#发表日期，一般不改动 
+categories: blog #文章文类 
+tags: [博客，文章] #文章标签，多于一项时用这种格式
+---
+#这里是正文，用markdown写
+</code></pre></div><p>然后再</p>
+<ul>
+<li>hexo server，访问localhost:4000预览效果。（退出server用Ctrl+c）</li>
+<li>hexo deploy，同步到github。访问网站看看效果。</li>
+</ul>
+<h2 id="命令格式小技巧">命令格式小技巧</h2>
+<p>hexo现在支持更加简单的命令格式了，比如：</p>
+<ul>
+<li>hexo g == hexo generate</li>
+<li>hexo d == hexo deploy</li>
+<li>hexo s == hexo server</li>
+<li>hexo n == hexo new</li>
+</ul>
+<h2 id="插件与主题">插件与主题</h2>
+<p>插件和主题可以去<a href="https://github.com/tommy351/hexo/wiki">https://github.com/tommy351/hexo/wiki</a>这里找
+如果有不明白的也可以给Hexo作者在Github发issues，作者是台湾人，也比较方便沟通。</p>
+<p>ok，欢迎访问我的博客：<a href="http://mlosun.com">http://mlosun.com</a></p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://www.mlosun.com/tags/%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/">工作环境</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/github/">Github</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/hexo/">hexo</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://www.mlosun.com/css/comments.css" />
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'x3OniavxUWEtE0kPmFKr2Tz0-9Nh9j0Va',
+        appKey: '1g8MfC9uH4tEg9OkXXusHTT1',
+        placeholder: '期待你一针见血的评论，Come on！',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>念念不忘,必有回响</span>
+    </div>
+</footer>
+    <script src="https://www.mlosun.com/js/jquery-3.5.1.min.js"></script>
+<link href="https://www.mlosun.com/css/fancybox.min.css" rel="stylesheet">
+<script src="https://www.mlosun.com/js/fancybox.min.js"></script>
+<script src="https://www.mlosun.com/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-175449293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+
+</html>
