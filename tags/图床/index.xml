@@ -20,5 +20,14 @@
       <description>Markdown图片的管理一直是个难题，而使用图床是一个当前比较流行的做法。但又不想使用过多的第三方服务，搜索了一圈发现当前这个方案似乎比较适合自己，配置起来又不会过于繁琐。这里也将整体的方案记录下来</description>
     </item>
     
+    <item>
+      <title>我的写博工作流：编辑器、图片上传与图床服务</title>
+      <link>https://www.mlosun.com/posts/my-blog-workflow-editor-image-service/</link>
+      <pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/my-blog-workflow-editor-image-service/</guid>
+      <description>我使用Typehco搭建博客，这是一个支持Markdown语言且开源的博客程序。就如同官网上所介绍的一样:轻量高效、先进稳定、简洁友好。 为了让自己将精力集中在「写博」本身，同时也为了有一个「优雅」的写</description>
+    </item>
+    
   </channel>
 </rss>
