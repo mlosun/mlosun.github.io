@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛森" />
+	
+	
+	
+	<title>使用Maverick创建博客 ｜ 洛森博客</title>
+	
+    
+    
+    <meta name="description" content="其实在2019年末Maverick发布之初就已经注意到这个博客系统了，只是因为一些原因未真正的去体验。直到近期自己对建博的需求愈来愈强烈，在尝试了各类建博方案后还是发现，Maverick仍然是离符合自" />
+    
+
+    
+    
+    <meta name="keywords" content="洛森博客, 博客, mlosun" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://www.mlosun.com/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://www.mlosun.com/">
+                    <span>洛森博客</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">念念不忘,必有回响</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/mlosun" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://www.mlosun.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/create-blog-with-maverick/'>使用Maverick创建博客</a></h2>
+                        <span class="date">2020.08.20</span>
+                    </div>
+                    <div class="post_content markdown"><p>其实在2019年末Maverick发布之初就已经注意到这个博客系统了，只是因为一些原因未真正的去体验。直到近期自己对建博的需求愈来愈强烈，在尝试了各类建博方案后还是发现，Maverick仍然是离符合自己心目中博客系统最近的那一个，并且几乎全部的硬性需求均能满足。</p>
+<p>那就不用再纠结了！</p>
+<blockquote>
+<p><strong>2020-08-31更新</strong>：尴尬的是，由于本人对编程并非很熟悉，在进行<a href="https://github.com/AlanDecode/Maverick">Maverick</a>个性化改造时遇到诸多困难，网络上的相关教程也较少，无奈弃之。后再次研究了下Hugo+Github Action的自动部署方案，尝试了下也并非很难，于是更换之。详见<a href="https://www.mlosun.com/posts/hugo-github-actions/">《使用Hugo+Github Actions实现自动化部署博客》</a>，Maverick仍然是一个非常优秀的产品，期待后续能够重新使用的哪一天。</p>
+</blockquote>
+<h1 id="为什么是maverick">为什么是Maverick？</h1>
+<p>触网十余年，作为一个“非程序员”也沾染了不少“程序员”才具备的偏好，对博客系统的基础要求是简洁、灵活、数据安全。</p>
+<h2 id="简洁">简洁</h2>
+<p>最初接触博客源于2010年，那会基本上是WordPress 和 ZBlog的天下，后来发现php语言更为流行之后，先后尝试过typehco、emlog等一系列优秀的博客系统。</p>
+<p>直到后来接触到了github，hexo、hugo这些静态博客逐渐映入眼帘。无需操心复杂的环境（php、mysql等等）、无需操心每年的服务器续费等问题，只需要将生成的静态文件上传，绑定域名，即可迅速搭建起自己的博客。</p>
+<p>但让我痛苦的是仍然需要在本地安装各类服务（Node.js、Go等等）、输入各种命令，作为一个“非程序员”每次折腾这些都痛苦的要死，自动化部署是个好东西。</p>
+<p>当然网络上也有很多hexo+Travis CI的静态博客自动化部署的方案，但深受All in One“毒害”的我不也是想着能少一个服务就少一个。</p>
+<p>涉及到github静态博客配套的评论、图床、CDN加速问题也如上述一样，需要配合各类服务才能搭建一个“完整”的博客。</p>
+<p>而Maverick这个博客系统的作者<a href="https://www.imalan.cn">熊猫小A</a>提供了一套使用Maverick建博的<a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate">「非标准方法」</a>，在体验后发现，全部所用到的服务只需要github+jsDelivr+LeanCloud+域名服务商即可。</p>
+<p>当然了，如果对访问速度没有要求jsDelivr也可以不使用，如果无需评论的话LeanCloud也可以不使用，那就只需要github+域名服务商，管理非常之简洁。</p>
+<p>并且后期发布博客内容的过程，也非常之简洁。我只需要在github中<code>Create new file</code>，然后将在任何MD文件中的内容复制粘贴进来，调整下头部参数后提交，系统就能完成后续的一系列工作。包括了内容的生成、发布、图片的引用和统一管理，并且由于github的机制也相当于自动完成了备份的工作，包括内容与图片的备份。</p>
+<h2 id="灵活--数据安全">灵活 &amp; 数据安全</h2>
+<p>静态博客流行的是Markdown写文章，而Markdown对图片的处理一直是痛点，往往都需要准备第三方的图床来进行管理。第三方图床什么时候跑路完全不清楚，虽说也有uPic、PicGo这类优秀的客户端可以将github当作图床来管理，可还是很会很繁琐。并且在实际的写博过程中，引用其他网站的图片也会收到禁止外链等因素的干扰。</p>
+<p>Maverick可以实现无论任何地方的图片地址（包含远程图片），系统都会在生成博客时自动的将他们复制到统一的位置，并同时修改Markdown文章里的引用链接。同时结合jsDelivr的使用也能在国内获得良好的访问速度。</p>
+<p>除了图片，Maverick在文章内容的管理上也非常可控，在指定的路径下你可以按照各种你喜欢的方式去组织你的Markdown文件，不论是放在文件夹里还是全部列出来，不论是文件的命名是怎样，你可以通过Maverick强大的配置选项去调整。</p>
+<p>能够灵活的组织文章、图片，同时在github上使用这套系统，长久来看只需要保存好文章、图片目录以及配置文件，就可以让自己的数据变得很安全。</p>
+<p>当然在数据安全上，你也可以使用将仓库同步到本地、同步到其他的git托管平台以达到多地备份的目的，让数据更可控。</p>
+<p>另外关于生成器和主题，这两类文件是经常需要升级的。当生成器、主题、文章和图片文件全部混在一个目录下时，时间久了就弄不清楚了。通过git的子模块功能，你可以引入作者的生成器和主题仓库，来作为自己博客仓库下的一个子模块，必要时输入升级命令即可，主题文件也支持放在任何路径之下，非常灵活。</p>
+<h1 id="如何安装maverick">如何安装Maverick？</h1>
+<h2 id="示例仓库">示例仓库</h2>
+<p>前面提到，Maverick系统的作者提供了一套方便的<a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate">「非标准方法」</a>，可以参照这套方法来快速搭建自己的博客。</p>
+<p>在这里，我将根据自己的需求并结合这套方法搭建博客的过程记录下来，关于作者的原始教程可以参照上面的文章。</p>
+<h2 id="fork--tokens--自动化部署">Fork &amp; Tokens &amp; 自动化部署</h2>
+<ol>
+<li>
+<p><strong>Fork作者提供的示例仓库</strong>
+<a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate">https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate</a></p>
+</li>
+<li>
+<p><strong>为仓库开启 Pages 服务</strong>
+进入Fork的仓库，在Settings - GitHub Pages 中将发布来源设置为gh-pages branch，稍等片刻你就可以通过类似 https://&lt;用户名&gt;.github.io/Blog-With-GitHub-Boilerplate 这样的链接访问你的网站了。</p>
+</li>
+<li>
+<p><strong>为仓库添加一个 token</strong>
+点击<a href="https://github.com/settings/tokens">这个网址</a>，创建一个token并勾选repo复选框，新的token会显示出来，把它复制下来，保存好。关了这个页面你就永远也看不到它了。
+回到Fork的仓库中，在Settings - Secrets 中，新建一个名叫 <code>PERSONAL_TOKEN</code> 的 secret，填入刚刚生成的token</p>
+</li>
+<li>
+<p><strong>开启Github Actions自动化部署</strong>
+新Fork的仓库需要手动打开Actions，点击仓库顶部的 Actions 按钮，如果出现了以下提示，点击 &ldquo;I understand my workflows, go ahead and run them&rdquo;.</p>
+</li>
+</ol>
+<p>好，到这里，一些关于仓库的配置就基本完成了。</p>
+<h2 id="修改博客配置--绑定域名">修改博客配置 &amp; 绑定域名</h2>
+<blockquote>
+<p>从这里开始会对仓库的文件做一些修改，如果电脑上有安装 Git，可以把仓库 clone 到本地，完成修改后提交并 push 回去；如果没有安装，可以直接在浏览器中编辑文件。</p>
+</blockquote>
+<ol>
+<li>绑定自有域名 &amp; 修改仓库名称
+在域名服务商将域名CNAME解析为<code>&lt;用户名&gt;.github.io</code>，回到仓库在src/static文件夹中添加一个名叫CNAME的文件，内容填自己的域名，在<code>conf.py</code>中修改<code>site_prefix</code> 为 <code>/</code></li>
+</ol>
+<p>仓库名称任意修改即可。</p>
+<ol start="2">
+<li>其他配置的修改
+网站标题、描述、关键字、链接等设置均可参照<a href="https://github.com/AlanDecode/Maverick/blob/master/README-zh_CN.md#configurations--%E6%9E%84%E5%BB%BA">这里</a>在<code>conf.py</code>文件中修改</li>
+</ol>
+<h2 id="启用自动拉取远端图片">启用自动拉取远端图片</h2>
+<p>在仓库<code>conf.py</code>文件中添加或修改<code>fetch_remote_imgs</code>参数为<code>Ture</code></p>
+<p>验证方式：新发布一篇包含远程地址图片的文章，等待自动部署完成后查看图片地址是否在仓库内</p>
+<h2 id="使用-jsdelivr-作为博客的-cdn-服务">使用 jsDelivr 作为博客的 CDN 服务</h2>
+<ul>
+<li>在仓库<code>conf.py</code>文件中添加或修改<code>enable_jsdelivr</code>参数，如下：
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">enable_jsdelivr = {
+    &#34;enabled&#34;: True,
+    &#34;repo&#34;: &#34;&lt;你的用户名&gt;/&lt;你的仓库名&gt;@gh-pages&#34;
+}
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div></li>
+<li>验证方式：新发布一篇包含图片的文章，等待自动部署完成后查看图片地址是否以<code>cdn.jsdelivr.net</code>开头</li>
+</ul>
+<h2 id="使用valine--leancloud作为博客的评论服务">使用Valine &amp; LeanCloud作为博客的评论服务</h2>
+<ol>
+<li>注册一个<a href="https://www.leancloud.cn">LeanCloud</a>账户，创建一个应用，在应用Keys中获取到AppID和AppKey</li>
+<li>在仓库<code>conf.py</code>文件中添加或修改<code>valine</code>参数，如下：
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">valine = {
+    &#34;enable&#34;: True,
+    &#34;el&#34;: &#39;#vcomments&#39;,
+    &#34;appId&#34;: &#34;&lt;获取到的AppID&gt;&#34;,
+    &#34;appKey&#34;: &#34;&lt;获取到的AppKey&gt;&#34;,
+}
+</code></pre></div><p>``</p>
+</li>
+</ol>
+<ul>
+<li>验证方式：任意打开一篇文章测试评论即可</li>
+</ul>
+<h1 id="如何使用maverick">如何使用Maverick？</h1>
+<h2 id="在本地进行创作和维护">在本地进行创作和维护</h2>
+<p>我使用<a href="https://desktop.github.com">Github Desktop</a>管理Github的仓库，安装好后clone仓库到本地文件夹</p>
+<p>记得在clone完毕后会询问你本地推送到哪里，选择“For my own purposes”（因为是fork的仓库，所以会提示这个问题）</p>
+<p>日常的操作为：通过文本编辑器编辑内容后，Github Desktop会显示改变了哪些内容，填写信息后提交，然后再推送到远端即可</p>
+<h2 id="发布新的内容">发布新的内容</h2>
+<p>在src文件夹内新建Markdown文件，除了文章内容外也需要完善<code>frontmatter</code>(<a href="https://github.com/AlanDecode/Maverick/blob/master/README-zh_CN.md#file-arrangement-and-frontmatter">查看详细说明</a>)，示例如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">---
+layout: post
+title: 我的第一篇文章
+slug: my-first-awesome-post
+date: 2019-12-17 20:34
+status: publish
+author: &lt;填写你的名字&gt;
+categories: 
+  - 默认分类
+tags: 
+  - 博客
+  - GitHub
+excerpt: Hello World!
+---
+
+这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
+</code></pre></div><h2 id="升级生成器和主题">升级生成器和主题</h2>
+<p>如果你的电脑上有安装<code>make</code>，这个过程可以方便很多，在仓库文件夹内进入终端，输入如下命令：</p>
+<ul>
+<li>升级Maverick：<code>make mvrk</code></li>
+<li>升级主题：<code>make theme</code></li>
+</ul>
+<p>关于<code>make</code>命令的详细内容可以参考仓库内的<code>Makefile</code>文件</p>
+<h2 id="数据清理与备份">数据清理与备份</h2>
+<blockquote>
+<p>以下默认为source分支</p>
+</blockquote>
+<ul>
+<li>以下文件或文件夹我用不着，可以清理或修改
+<ul>
+<li>assets文件夹</li>
+<li>About-User-Pages.md</li>
+<li>update_site.bat</li>
+<li>update_site.sh</li>
+<li>README.md（当然这个文件一般github仓库也都会保留些内容）</li>
+</ul>
+</li>
+<li>以下文件或文件夹是你的文章及图片的重要数据，需做好备份，当然也不能清理
+<ul>
+<li>src文件夹</li>
+<li>gh-pages分支下的archives/assets文件夹</li>
+</ul>
+</li>
+<li>以下文件或文件夹是Maverick的重要组成部分，使用Maverick的话请勿清理
+<ul>
+<li>Galileo文件夹（主题子模块，<a href="https://github.com/AlanDecode/Maverick-Theme-Galileo">原地址</a>）</li>
+<li>Maverick文件夹（生成器子模块，<a href="https://github.com/AlanDecode/Maverick">原地址</a>）</li>
+<li>conf.py（主要的配置文件）</li>
+<li>Makefile（不使用make的话也可以清理）</li>
+<li>.github/workflows/ci.yml（Github Action自动化部署）</li>
+<li>.gitmodules（主题和生成器的子模块配置）</li>
+</ul>
+</li>
+</ul>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a href="https://blog.imalan.cn/archives/blog-now-powered-by-maverick/">Maverick发布博文</a></li>
+<li><a href="https://github.com/AlanDecode/Maverick">Maverick仓库主页</a></li>
+<li><a href="https://github.com/AlanDecode/Maverick/blob/master/README-zh_CN.md">Maverick使用文档</a>（中文）</li>
+</ul>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://www.mlosun.com/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/github/">github</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/maverick/">Maverick</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://www.mlosun.com/css/comments.css" />
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'x3OniavxUWEtE0kPmFKr2Tz0-9Nh9j0Va',
+        appKey: '1g8MfC9uH4tEg9OkXXusHTT1',
+        placeholder: '期待你一针见血的评论，Come on！',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>念念不忘,必有回响</span>
+    </div>
+</footer>
+    <script src="https://www.mlosun.com/js/jquery-3.5.1.min.js"></script>
+<link href="https://www.mlosun.com/css/fancybox.min.css" rel="stylesheet">
+<script src="https://www.mlosun.com/js/fancybox.min.js"></script>
+<script src="https://www.mlosun.com/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-175449293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+
+</html>

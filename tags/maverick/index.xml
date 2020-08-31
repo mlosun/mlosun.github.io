@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maverick on 洛森博客</title>
+    <link>https://www.mlosun.com/tags/maverick/</link>
+    <description>Recent content in Maverick on 洛森博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.mlosun.com/tags/maverick/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Maverick创建博客</title>
+      <link>https://www.mlosun.com/posts/create-blog-with-maverick/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/create-blog-with-maverick/</guid>
+      <description>其实在2019年末Maverick发布之初就已经注意到这个博客系统了，只是因为一些原因未真正的去体验。直到近期自己对建博的需求愈来愈强烈，在尝试了各类建博方案后还是发现，Maverick仍然是离符合自</description>
+    </item>
+    
+  </channel>
+</rss>

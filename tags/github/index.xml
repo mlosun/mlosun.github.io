@@ -29,5 +29,14 @@
       <description>很早就想搭建一个自己的博客了，因为某些原因一直为付诸行动。直到近期自己对建博的需求愈发强烈，在尝试过了各类流行的方案后，选择Hugo+Github Action来实现静态博客的自动化部署。这里也将整理过</description>
     </item>
     
+    <item>
+      <title>使用Maverick创建博客</title>
+      <link>https://www.mlosun.com/posts/create-blog-with-maverick/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/create-blog-with-maverick/</guid>
+      <description>其实在2019年末Maverick发布之初就已经注意到这个博客系统了，只是因为一些原因未真正的去体验。直到近期自己对建博的需求愈来愈强烈，在尝试了各类建博方案后还是发现，Maverick仍然是离符合自</description>
+    </item>
+    
   </channel>
 </rss>
