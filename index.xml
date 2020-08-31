@@ -84,7 +84,7 @@
     </item>
     
     <item>
-      <title>配置自己的工作环境（一） 序言</title>
+      <title>配置自己的工作环境1：序言</title>
       <link>https://www.mlosun.com/posts/my-workbench-1-preface/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
@@ -93,16 +93,7 @@
     </item>
     
     <item>
-      <title>配置自己的工作环境（三）Sublime Text 2 的安装与配置</title>
-      <link>https://www.mlosun.com/posts/my-workbench-3-sublime-text-2/</link>
-      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mlosun.com/posts/my-workbench-3-sublime-text-2/</guid>
-      <description>写在前面的话： Windows下的文本（代码）编辑器多不胜数，如Notepad++、Editplus等等。但选择哪一款在于自己的习惯，博主在这里选择的是号称性感无比的代码编辑器Sublime Text 2 （via</description>
-    </item>
-    
-    <item>
-      <title>配置自己的工作环境（二） 重装个系统先</title>
+      <title>配置自己的工作环境2：重装个系统先</title>
       <link>https://www.mlosun.com/posts/my-workbench-2-reinstall-system/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
@@ -111,7 +102,25 @@
     </item>
     
     <item>
-      <title>配置自己的工作环境（五）使用Git进行工作文档的版本控制</title>
+      <title>配置自己的工作环境3：Sublime Text 2 的安装与配置</title>
+      <link>https://www.mlosun.com/posts/my-workbench-3-sublime-text-2/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/my-workbench-3-sublime-text-2/</guid>
+      <description>写在前面的话： Windows下的文本（代码）编辑器多不胜数，如Notepad++、Editplus等等。但选择哪一款在于自己的习惯，博主在这里选择的是号称性感无比的代码编辑器Sublime Text 2 （via</description>
+    </item>
+    
+    <item>
+      <title>配置自己的工作环境4：创建你的电子工作台</title>
+      <link>https://www.mlosun.com/posts/my-workbench-4-establish-workbench/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/my-workbench-4-establish-workbench/</guid>
+      <description>本来准备开始写Git相关内容的，但想了想，Git毕竟是程序员世界的东西，而想要使用Git来加强工作环境还是需要先做下相应的理论准备。 你见过这样的桌面吗？ 甚至于C盘D盘E盘也是如此，邮箱里的资料也是乱七</description>
+    </item>
+    
+    <item>
+      <title>配置自己的工作环境5：使用Git进行工作文档的版本控制</title>
       <link>https://www.mlosun.com/posts/my-workbench-5-git-instructions/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
@@ -120,21 +129,12 @@
     </item>
     
     <item>
-      <title>配置自己的工作环境（六）使用Github&#43;hexo搭建静态博客</title>
-      <link>https://www.mlosun.com/posts/my-workbench-5-hexo-blog/</link>
+      <title>配置自己的工作环境6：使用Github&#43;hexo搭建静态博客</title>
+      <link>https://www.mlosun.com/posts/my-workbench-6-hexo-blog/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mlosun.com/posts/my-workbench-5-hexo-blog/</guid>
+      <guid>https://www.mlosun.com/posts/my-workbench-6-hexo-blog/</guid>
       <description>搭建一个博客和配置自己的工作环境有什么关系？ 博主认为，是为了更好的进行知识系统的管理，当然你也可以说我有印象笔记等等工具。但我想说的是在互联网上混，你离得开交流与互动么？ 搭建博客的程序很多，Wordp</description>
-    </item>
-    
-    <item>
-      <title>配置自己的工作环境（四）创建你的电子工作台</title>
-      <link>https://www.mlosun.com/posts/my-workbench-4-establish-workbench/</link>
-      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mlosun.com/posts/my-workbench-4-establish-workbench/</guid>
-      <description>本来准备开始写Git相关内容的，但想了想，Git毕竟是程序员世界的东西，而想要使用Git来加强工作环境还是需要先做下相应的理论准备。 你见过这样的桌面吗？ 甚至于C盘D盘E盘也是如此，邮箱里的资料也是乱七</description>
     </item>
     
   </channel>
