@@ -56,5 +56,14 @@
       <description>6月底自家宝宝出生后，在经历过无数新生儿常见的折腾后，终于随着7月底月嫂阿姨的离开，正式进入了亲自带娃的阶段。其中最痛苦的莫过于哄睡。都知道宝宝在前几个月需要每天有较长睡眠来保障大脑的发育，但随着月嫂</description>
     </item>
     
+    <item>
+      <title>Hexo博客折腾记</title>
+      <link>https://www.mlosun.com/posts/hexo-blog-configure/</link>
+      <pubDate>Wed, 07 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/hexo-blog-configure/</guid>
+      <description>昨天安装好了Hexo博客，按照自己的习惯总要折腾一番。使用了Pacman主题，在此记录下过程~ 完成后的预览 http://mlosun.com 使用的主题和插件 Pacman主题 作者博客：http://yangjian.me 介绍链接：ht</description>
+    </item>
+    
   </channel>
 </rss>

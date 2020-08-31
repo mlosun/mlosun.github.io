@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on 洛森博客</title>
+    <link>https://www.mlosun.com/tags/hexo/</link>
+    <description>Recent content in Hexo on 洛森博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 07 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.mlosun.com/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo博客折腾记</title>
+      <link>https://www.mlosun.com/posts/hexo-blog-configure/</link>
+      <pubDate>Wed, 07 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/hexo-blog-configure/</guid>
+      <description>昨天安装好了Hexo博客，按照自己的习惯总要折腾一番。使用了Pacman主题，在此记录下过程~ 完成后的预览 http://mlosun.com 使用的主题和插件 Pacman主题 作者博客：http://yangjian.me 介绍链接：ht</description>
+    </item>
+    
+  </channel>
+</rss>

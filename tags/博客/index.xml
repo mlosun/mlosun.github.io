@@ -38,5 +38,14 @@
       <description>我使用Typehco搭建博客，这是一个支持Markdown语言且开源的博客程序。就如同官网上所介绍的一样:轻量高效、先进稳定、简洁友好。 为了让自己将精力集中在「写博」本身，同时也为了有一个「优雅」的写</description>
     </item>
     
+    <item>
+      <title>Hexo博客折腾记</title>
+      <link>https://www.mlosun.com/posts/hexo-blog-configure/</link>
+      <pubDate>Wed, 07 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/hexo-blog-configure/</guid>
+      <description>昨天安装好了Hexo博客，按照自己的习惯总要折腾一番。使用了Pacman主题，在此记录下过程~ 完成后的预览 http://mlosun.com 使用的主题和插件 Pacman主题 作者博客：http://yangjian.me 介绍链接：ht</description>
+    </item>
+    
   </channel>
 </rss>
