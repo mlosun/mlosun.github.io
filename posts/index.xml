@@ -65,5 +65,14 @@
       <description>昨天安装好了Hexo博客，按照自己的习惯总要折腾一番。使用了Pacman主题，在此记录下过程~ 完成后的预览 http://mlosun.com 使用的主题和插件 Pacman主题 作者博客：http://yangjian.me 介绍链接：ht</description>
     </item>
     
+    <item>
+      <title>GitHub for Windows的安装与配置</title>
+      <link>https://www.mlosun.com/posts/install-github-for-windows/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/install-github-for-windows/</guid>
+      <description>初接触git，看了很多msysgit的使用教程，对于没太接触过相关内容的我深感糊涂。虽然最后也能使用git配合GitHub进行简单的操作，但还是感到过程对于我来说甚是麻烦。 突然不小心发现了GitHub</description>
+    </item>
+    
   </channel>
 </rss>
