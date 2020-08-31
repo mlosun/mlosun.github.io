@@ -1,5 +1,5 @@
 ---
-title: "配置自己的工作环境（三）Sublime Text 2 的安装与配置"
+title: "配置自己的工作环境3：Sublime Text 2 的安装与配置"
 date: 2014-05-06
 hidden: false
 draft: false

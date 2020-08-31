@@ -1,10 +1,10 @@
 ---
-title: "配置自己的工作环境（六）使用Github+hexo搭建静态博客"
+title: "配置自己的工作环境6：使用Github+hexo搭建静态博客"
 date: 2014-05-06
 hidden: false
 draft: false
 tags: ["工作环境","Github","hexo"]
-slug: "My-Workbench-5-Hexo-Blog"
+slug: "My-Workbench-6-Hexo-Blog"
 ---
 
 搭建一个博客和配置自己的工作环境有什么关系？
