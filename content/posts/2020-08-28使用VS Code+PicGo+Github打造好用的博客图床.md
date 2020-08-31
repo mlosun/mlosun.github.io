@@ -8,6 +8,20 @@ slug: "vscode-picgo-github"
 ---
 > Markdown图片的管理一直是个难题，而使用图床是一个当前比较流行的做法。但又不想使用过多的第三方服务，搜索了一圈发现当前这个方案似乎比较适合自己，配置起来又不会过于繁琐。这里也将整体的方案记录下来。
 
+> **2020-08-31更新**：有点尴尬的是，刚写完本文第二天我的Macbook中的VS Code PicGo扩展快捷键`Cmd + Opt + U`不知何故失效了，初步判断是和某个App的快捷键冲突了，找了一圈无果。故转而使用[PicGo独立应用](https://picgo.github.io/PicGo-Doc/zh/)而非[PicGO扩展](https://github.com/PicGo/vs-picgo)了。
+> **两个切换Tips**：
+> #### 1.[PicGo独立应用](https://picgo.github.io/PicGo-Doc/zh/)展示[PicGO扩展](https://github.com/PicGo/vs-picgo)的历史上传记录
+> - [PicGo独立应用](https://picgo.github.io/PicGo-Doc/zh/)的历史上传记录在`~/Library/Application Support/picgo/data.json`
+> - [PicGO扩展](https://github.com/PicGo/vs-picgo)的历史上传记录在`your_home_dir/vs-picgo-data.json`
+> - 两者格式一致，手动复制过来即可
+> - 注：[picgo-plugin-vscode-migrator](https://github.com/upupming/picgo-plugin-vscode-migrator)已失效无法使用
+> #### 2.[PicGo独立应用](https://picgo.github.io/PicGo-Doc/zh/)和[PicGO扩展](https://github.com/PicGo/vs-picgo)的时间戳重命名区别
+> - [PicGo独立应用](https://picgo.github.io/PicGo-Doc/zh/)的时间戳重命名格式为YYYYMMDD
+> - [PicGO扩展](https://github.com/PicGo/vs-picgo)YYYY-MM-DD
+> 
+> 好在本方案刚刚启用，已上传的图片并不多，手动修正了上述两个小问题后，后续还是老老实实使用[PicGo独立应用](https://picgo.github.io/PicGo-Doc/zh/)吧~ε(┬┬﹏┬┬)3
+
+
 # 一、方案亮点
 
 使用[Github](https://github.com)作为图床的托管，一方面经济、稳定，另一方面也能少一些托管服务商，方便整体的备份。至于速度问题，可以使用[jsDelivr](https://www.jsdelivr.com)来解决.
@@ -28,11 +42,11 @@ slug: "vscode-picgo-github"
 
 1.在安装好VS Code的情况下，搜索扩展`PicGo`，并安装
 
-![](https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/2020-08-28-13-00-12.png)
+![](https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200828130012.png)
 
 2.打开扩展`PicGo`的配置页面，依据自己的情况完善即可
 
-![](https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/2020-08-28-13-00-27.png)
+![](https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200828130027.png)
 
 - **Picgo: Custom Output Format** 自定义输出格式，我使用`![](${url})`
 - **Picgo: Custom Upload Name** 自定义上传文件名，我使用`${dateTime}${extName}`
@@ -79,9 +93,9 @@ slug: "vscode-picgo-github"
 我需要使用jsDelivr服务，同时也绑定了域名，所以三种方式都可以访问到图片资源，示例：
 
 ```
-https://raw.githubusercontent.com/mlosun/My_images/main/BlogImages/2020-08-28-13-00-12.png
-https://images.mlosun.com/BlogImages/2020-08-28-13-00-12.png
-https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/2020-08-28-13-00-12.png
+https://raw.githubusercontent.com/mlosun/My_images/main/BlogImages/20200828130012.png
+https://images.mlosun.com/BlogImages/20200828130012.png
+https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200828130012.png
 ```
 
 # 六、参考资料
