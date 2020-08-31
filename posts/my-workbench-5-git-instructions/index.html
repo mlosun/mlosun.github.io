@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛森" />
+	
+	
+	
+	<title>配置自己的工作环境（五）使用Git进行工作文档的版本控制 ｜ 洛森博客</title>
+	
+    
+    
+    <meta name="description" content="其实这个系列教程的缘由就是这一篇了。 同时也附上参考链接玩转git,让git成为个人工作备份利器 开始正文！ Git是什么？ 前面说了那么多Git，但是Git到底是什么呢？百度百科 在程序员的世界里Git是一款" />
+    
+
+    
+    
+    <meta name="keywords" content="洛森博客, 博客, mlosun" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://www.mlosun.com/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.mlosun.com/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://www.mlosun.com/">
+                    <span>洛森博客</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">念念不忘,必有回响</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/mlosun" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://www.mlosun.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/my-workbench-5-git-instructions/'>配置自己的工作环境（五）使用Git进行工作文档的版本控制</a></h2>
+                        <span class="date">2014.05.06</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>其实这个系列教程的缘由就是这一篇了。
+同时也附上参考链接<a href="http://www.cnblogs.com/dabaopku/archive/2012/01/09/2316772.html">玩转git,让git成为个人工作备份利器</a></p>
+</blockquote>
+<p>开始正文！</p>
+<h1 id="git是什么">Git是什么？</h1>
+<p>前面说了那么多Git，但是Git到底是什么呢？<a href="http://baike.baidu.com/subview/1531489/12032478.htm">百度百科</a></p>
+<p>在程序员的世界里Git是一款自由和开源的分布式版本控制系统。但在这里我们不能这么说，因为这个系列的文章对象并非都是程序员，哪怕你不懂任何编程甚至于电脑小白。</p>
+<blockquote>
+<p>Git是一款记录你工作的任何变动，并能保留每次工作结果的一款项目管理神器！</p>
+</blockquote>
+<p>举个例子：</p>
+<blockquote>
+<p>你是一个编辑，老板让你写一份产品报告，终于在2014年5月1日完成了初稿 <code>产品报告.doc</code>，然后因为这个报告比较重要，于是完善一下有了<code>产品报告0502.doc</code>。然后提交给老板，老板说这里这里不好需要修改。于是你有了<code>产品报告0503.doc</code>，后来在老板和客户的英明指导下，你有了<code>产品报告0504.doc</code>、<code>产品报告0505.doc</code>、<code>产品报告（最终版）.doc</code>、<code>产品报告（最终版）新.doc</code>、<code>产品报告（最终版）0510.doc </code>、<code>产品报告（最终版）完成版.doc </code>…..</p>
+</blockquote>
+<blockquote>
+<p>到头来自己比谁都乱，每个版本都有一些资料想保留下来，但给老板和客户的又只有一份完成版。</p>
+</blockquote>
+<p>而使用Git，可以实现你始终只有一个<code>产品报告.doc</code>，并且每一次修改的时候都能记录下当时发生了什么事，并且每个版本都能和其他版本对比，增加了哪些内容，删减了哪些内容。并且能够随时恢复到任一版本，你的归档文件夹，始终只有这一份文档！</p>
+<h1 id="准备工作">准备工作</h1>
+<p>我们只需要两款软件</p>
+<p>msysgit（<a href="http://git-scm.com/">下载</a>）（如果你懂命令行，其实只需要这一款就够了）
+TortoiseGit（<a href="http://tortoisegit.org/">下载</a>）
+msysgit 是Git核心的功能软件，而 TortoiseGit 是能够和Windows的资源管理器整合的图形化Git管理软件，</p>
+<p>知道了这些，接下来你的步骤是：
+1. 下载这两款软件到本地
+2. 首先安装 msysgit（顺序不要错了）
+3. 再次安装 TortoiseGit（啥，你问我安装选项？除了安装路径两个软件全部一路默认好了）
+4. 顺便下载 TortoiseGit 的中文语言包，并安装（和 TortoiseGit 下载页面在一起的，别说你找不到）
+5. 安装好后在桌面点击鼠标右键，就会出现几个程序选项，如图：
+<img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831131416.png" alt="">
+6. 接下来打开 TortoiseGit =&gt; Settings 选项，如图:
+<img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831131438.png" alt="">
+7. 修改语言为中文（在桌面再次鼠标右键打开，是不是都变成中文了？）
+8. 修改Git.exe路径为你安装 msysgit 的bin文件夹
+9.  配置Git环境完毕，是不是很简单？</p>
+<h1 id="git工作流">Git工作流</h1>
+<p>在这里，主要说3个Git要点，并且依照这3个要点的顺序讲述如何使用Git进行工作，然后在根据一个实例来说明Git的使用：</p>
+<ul>
+<li>基础知识</li>
+<li>版本分支</li>
+<li>版本对比及还原</li>
+</ul>
+<h2 id="基础知识">基础知识</h2>
+<p>首先我们在E盘的 <code>MyWork文件夹</code> 的图标上点击鼠标右键选择“Git在这里创建版本库”，弹出的对话框不用管直接点确定（复选框不要选），随后点击ok即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132055.png" alt=""></p>
+<p>ok，一个版本库就创建出来了。刷新或重新打开E盘，你会发现文件夹上出现了一个绿色的对勾图标，说明这个文件夹已经受到了Git的版本控制。（这个图标的出现不一定实时，也许你要多刷新几次，甚至重启电脑才行）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132142.png" alt=""></p>
+<blockquote>
+<p>当你将一个文件夹使用Git创建了版本库时，会在该文件夹下出现一个叫.git的隐藏文件夹，这个也是Git控制的一些数据，如果删除该隐藏文件夹，那么所有的Git记录和数据将丢失。你可以在文件夹选项中设置不显示隐藏文件。</p>
+</blockquote>
+<p>常见的图标及含义如下：</p>
+<ul>
+<li>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132252.png" alt="">
+这个文件（夹）很干净，是最新版本文件</p>
+</li>
+<li>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132312.png" alt="">
+这个文件（夹）发生了修改，需要提交</p>
+</li>
+<li>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132327.png" alt="">
+这个文件（夹）要添加进版本库</p>
+</li>
+<li>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132337.png" alt="">
+这个文件（夹）没有在版本库中，需要添加进来（转为上一个图标的状态），或者忽略（转为下一个图标的状态）</p>
+</li>
+<li>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132350.png" alt="">
+这个文件（夹）被忽略，不受版本控制</p>
+</li>
+<li>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132359.png" alt="">
+这个文件(夹)里的内容发生冲突（这是最危险的情况，但是对于个人用户来说，几乎不会出现，出现的情况是两个人同时对一个文件做修改，后提交的人在更新时无法与前者完美融合时，这个不需要深入理解）</p>
+</li>
+</ul>
+<h2 id="版本分支">版本分支</h2>
+<p>接下来说说版本分支（Branch）。</p>
+<p>举个例子：</p>
+<blockquote>
+<p>你需要写一份商业策划，随后洋洋洒洒一大篇完成了这份商业策划。但突发灵感想修改一下商业策划，但又不知道是不是自己想要的，你就可以新建一个分支拷贝这份商业策划的所有资料进行修改。</p>
+</blockquote>
+<blockquote>
+<p>当修改完成后如果你满意，就可以将这个分支与原来的主分支（Master）合并（Merge），甚至直接代替主分支。如果你感觉越改越糟，就直接回到主分支工作，仿佛什么也没有发生一样（当然这个新的分支要通过某些复杂的操作来删除，你也可以留着，作为自己惨痛教训的警钟）。</p>
+</blockquote>
+<blockquote>
+<p>也就是说，分支为你提供了一个尝试某些新道路的空间。</p>
+</blockquote>
+<h2 id="版本对比及还原">版本对比及还原</h2>
+<p>还记得上一篇说的<code>提交commit</code>吗？</p>
+<p>每一次工作完成之后都需要执行 <code>提交commit</code>，所以Git就能够记录每一次提交时的文档状况，并且能够和任一一次提交的版本进行详细对比，并且能够恢复到任一版本的状态。</p>
+<h1 id="实战演练">实战演练</h1>
+<p>我时常会使用到<code>wordpress</code>程序开发各种不同的网站，所以现在我就演示一个使用wordpress给一个朋友做摄影公司网站的项目管理案例。</p>
+<h2 id="创建提交">创建&amp;提交</h2>
+<p>首先新建一个文件夹叫 <code>wordpress</code>，我的策略是所有基于wordpress开发的程序都在这个文件夹里完成，使用不同的分支来区分不同的网站项目。</p>
+<p>右键将<code>wordpress</code>添加进版本库。并且添加一个文件夹叫做<code>README.md</code>，里面写上内容。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132628.png" alt=""></p>
+<p>右键在文件夹内空白地方点击<code>Git提交 -&gt; &quot;master&quot;</code>表示向master分支提交工作内容。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132653.png" alt=""></p>
+<blockquote>
+<p>如果你第一次提交，TortoiseGit会提示你设置用户名和电子邮箱，这是因为Git可以多用户协作，填写用户名和邮箱是为了区分每次工作的提交和修改时由谁进行的。</p>
+</blockquote>
+<p>弹出提交窗口，填写日志及勾选变更列表后点击确定（Git强制要求你写提交日志，否则不能提交，这也是一个好习惯）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132713.png" alt=""></p>
+<p>ok，提交完成后你发现<code>README.md</code>文件签名的蓝色问号已经变为绿色对号了。</p>
+<p>再次，我们依照<code>README.md</code>里的规划，将master内的文件夹目录和内容准备好，就像平时操作文件夹一样。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831132736.png" alt=""></p>
+<p>我做了如下事情：</p>
+<ul>
+<li>修改了<code>README.md</code>文件，删除了一行<code> - Vcom：公司网站项目</code></li>
+<li>新建了 <code>WP</code> 、 <code>Theme</code> 、 <code>Plugin</code> 、 <code>Doning</code> 这几个文件夹</li>
+<li>下载wordpress3.9版本的源码，放入 <code>WP</code>文件夹</li>
+</ul>
+<p>再次提交：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133107.png" alt=""></p>
+<p>刷新发现 <code>Doing</code>、 <code>Plugin</code>、 <code>Theme</code> 这三个文件夹前面还是蓝色问号。这是因为Git不允许提交空的文件夹，所以新建这三个空文件夹提交不成功。我们在这三个文件夹内都添加一个README.md文档再次提交就好了。刷新看下，全绿了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133125.png" alt=""></p>
+<h2 id="版本差异化对比">版本差异化对比</h2>
+<p>ok，现在我突然想起来，我好像改变了版本库根目录下的README.md文件，但是又记不起来改变了什么内容，怎么办?</p>
+<p>我们在<code>README.md</code>文件上右键点击</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133158.png" alt=""></p>
+<p>选择“与前一版本比较差异”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133214.png" alt=""></p>
+<p>我们可以看到，在有变化的地方会被高亮显示。</p>
+<h2 id="版本还原">版本还原</h2>
+<p>考虑了一下，我们想回到之前的版本</p>
+<p>右键选择“TortoiseGit =&gt; 显示日志”</p>
+<p>在日志列表选择想要恢复到的版本，右键点击看到</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133807.png" alt=""></p>
+<p>有两种回到之前版本的方法，Reset 和 Revert ，他们的区别在于</p>
+<ul>
+<li>revert 是撤销某次操作，此次操作之前的commit都会被保留</li>
+<li>reset 是撤销某次提交，但是此次之后的修改都会被退回到暂存区</li>
+</ul>
+<p>在这里我们使用Revert。</p>
+<p>点击Revert后刷新发现，怎么 <code>Doing</code>、 <code>Plugin</code>、 <code>Theme</code>这三个文件夹还在，里面的 README.md 也还在。没错，这也是Git的聪明之处。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133855.png" alt=""></p>
+<p>还记得我们之前的操作吗？看上面日志信息的那张图我们发现</p>
+<ul>
+<li>15:05 我们提交的内容：修改README.md文件、新建wordpress文件夹并放入内容</li>
+<li>15:11 我们提交的内容：新建 Doing、 Plugin、 Theme三个文件夹并放入文件README.md</li>
+</ul>
+<p>也就是说我们仅仅恢复了15:05分的操作，但15:11分的操作仍然存在。是不是很赞？
+再次提交后我们查看日志信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133907.png" alt=""></p>
+<p>新增一次提交的日志，并且在日志说明里可以看到是Revert，下面的文件里列表双击即可打开查看这次提交都变动了什么。</p>
+<p>下面我们将WP这个文件夹重新放入wordpress源码，并提交一次，来演示如何使用版本分支</p>
+<h2 id="新建分支">新建分支</h2>
+<p>在文件夹内右键选择“TortoiseGit =&gt; 创建分支”，取名为Moga</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831133955.png" alt=""></p>
+<p>再次文件夹内右键选择“TortoiseGit =&gt; 切换/检出”，切换到Moga分支</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831134003.png" alt=""></p>
+<p>文件没变化？是的，因为我们创建Moga分支的方法属于“克隆master主分支，并创建新分支”的方式，你也可以选择其他方式来创建分支。</p>
+<h2 id="切换与使用分支管理文件">切换与使用分支管理文件</h2>
+<p>由于上面我们已经切换到Moga分支了，接下来我们的操作只对Moga分支有影响。</p>
+<p>比如我们创建一个 <code>Moga.md</code> 文件，并提交</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200831134013.png" alt=""></p>
+<p>然后我们切换回master主分支出查看，并没有<code>Moga.md</code>这个文件，明白了吧！</p>
+<blockquote>
+<p>没错，版本分支就是这样去理解。和你复制整个版本库（包括所有的日志提交信息）没有区别。唯一不同的是你的文件夹目录结构更清爽了！</p>
+</blockquote>
+<p>ok，这篇耗时一下午的文章终于写完了。在以后的文章里我也会经常使用 Gif 和 TortoiseGit 。</p>
+<p>Git还有很多的小技巧，就留给以后再说吧。</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://www.mlosun.com/tags/%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/">工作环境</a>
+                                    
+                                    <a href="https://www.mlosun.com/tags/git/">Git</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://www.mlosun.com/css/comments.css" />
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'x3OniavxUWEtE0kPmFKr2Tz0-9Nh9j0Va',
+        appKey: '1g8MfC9uH4tEg9OkXXusHTT1',
+        placeholder: '期待你一针见血的评论，Come on！',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>念念不忘,必有回响</span>
+    </div>
+</footer>
+    <script src="https://www.mlosun.com/js/jquery-3.5.1.min.js"></script>
+<link href="https://www.mlosun.com/css/fancybox.min.css" rel="stylesheet">
+<script src="https://www.mlosun.com/js/fancybox.min.js"></script>
+<script src="https://www.mlosun.com/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-175449293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 洛森博客</title>
+    <link>https://www.mlosun.com/tags/git/</link>
+    <description>Recent content in Git on 洛森博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.mlosun.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>配置自己的工作环境（五）使用Git进行工作文档的版本控制</title>
+      <link>https://www.mlosun.com/posts/my-workbench-5-git-instructions/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mlosun.com/posts/my-workbench-5-git-instructions/</guid>
+      <description>其实这个系列教程的缘由就是这一篇了。 同时也附上参考链接玩转git,让git成为个人工作备份利器 开始正文！ Git是什么？ 前面说了那么多Git，但是Git到底是什么呢？百度百科 在程序员的世界里Git是一款</description>
+    </item>
+    
+  </channel>
+</rss>
