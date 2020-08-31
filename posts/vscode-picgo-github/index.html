@@ -95,6 +95,23 @@
                     <div class="post_content markdown"><blockquote>
 <p>Markdown图片的管理一直是个难题，而使用图床是一个当前比较流行的做法。但又不想使用过多的第三方服务，搜索了一圈发现当前这个方案似乎比较适合自己，配置起来又不会过于繁琐。这里也将整体的方案记录下来。</p>
 </blockquote>
+<blockquote>
+<p><strong>2020-08-31更新</strong>：有点尴尬的是，刚写完本文第二天我的Macbook中的VS Code PicGo扩展快捷键<code>Cmd + Opt + U</code>不知何故失效了，初步判断是和某个App的快捷键冲突了，找了一圈无果。故转而使用<a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo独立应用</a>而非<a href="https://github.com/PicGo/vs-picgo">PicGO扩展</a>了。
+<strong>两个切换Tips</strong>：</p>
+<h4 id="1picgo独立应用httpspicgogithubiopicgo-doczh展示picgo扩展httpsgithubcompicgovs-picgo的历史上传记录">1.<a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo独立应用</a>展示<a href="https://github.com/PicGo/vs-picgo">PicGO扩展</a>的历史上传记录</h4>
+<ul>
+<li><a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo独立应用</a>的历史上传记录在<code>~/Library/Application Support/picgo/data.json</code></li>
+<li><a href="https://github.com/PicGo/vs-picgo">PicGO扩展</a>的历史上传记录在<code>your_home_dir/vs-picgo-data.json</code></li>
+<li>两者格式一致，手动复制过来即可</li>
+<li>注：<a href="https://github.com/upupming/picgo-plugin-vscode-migrator">picgo-plugin-vscode-migrator</a>已失效无法使用</li>
+</ul>
+<h4 id="2picgo独立应用httpspicgogithubiopicgo-doczh和picgo扩展httpsgithubcompicgovs-picgo的时间戳重命名区别">2.<a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo独立应用</a>和<a href="https://github.com/PicGo/vs-picgo">PicGO扩展</a>的时间戳重命名区别</h4>
+<ul>
+<li><a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo独立应用</a>的时间戳重命名格式为YYYYMMDD</li>
+<li><a href="https://github.com/PicGo/vs-picgo">PicGO扩展</a>YYYY-MM-DD</li>
+</ul>
+<p>好在本方案刚刚启用，已上传的图片并不多，手动修正了上述两个小问题后，后续还是老老实实使用<a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo独立应用</a>吧~ε(┬┬﹏┬┬)3</p>
+</blockquote>
 <h1 id="一方案亮点">一、方案亮点</h1>
 <p>使用<a href="https://github.com">Github</a>作为图床的托管，一方面经济、稳定，另一方面也能少一些托管服务商，方便整体的备份。至于速度问题，可以使用<a href="https://www.jsdelivr.com">jsDelivr</a>来解决.</p>
 <p>使用<a href="https://code.visualstudio.com">VS Code</a>+<a href="https://github.com/PicGo/vs-picgo">PicGO扩展</a>，来解决使用时的便捷性问题，毕竟少一个应用软件，就能少分心一些。</p>
@@ -105,9 +122,9 @@
 <p>只需要这两步，就可以关闭Github的页面了。</p>
 <h1 id="三vs-code-picgo配置">三、VS Code +PicGo配置</h1>
 <p>1.在安装好VS Code的情况下，搜索扩展<code>PicGo</code>，并安装</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/2020-08-28-13-00-12.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200828130012.png" alt=""></p>
 <p>2.打开扩展<code>PicGo</code>的配置页面，依据自己的情况完善即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/2020-08-28-13-00-27.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200828130027.png" alt=""></p>
 <ul>
 <li><strong>Picgo: Custom Output Format</strong> 自定义输出格式，我使用<code>![](${url})</code></li>
 <li><strong>Picgo: Custom Upload Name</strong> 自定义上传文件名，我使用<code>${dateTime}${extName}</code></li>
@@ -169,9 +186,9 @@
 <li>若需要使用jsDelivr加速服务，可填入<code>https://cdn.jsdelivr.net/gh/用户名/仓库名@分支名</code></li>
 </ol>
 <p>我需要使用jsDelivr服务，同时也绑定了域名，所以三种方式都可以访问到图片资源，示例：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">https://raw.githubusercontent.com/mlosun/My_images/main/BlogImages/2020-08-28-13-00-12.png
-https://images.mlosun.com/BlogImages/2020-08-28-13-00-12.png
-https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/2020-08-28-13-00-12.png
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">https://raw.githubusercontent.com/mlosun/My_images/main/BlogImages/20200828130012.png
+https://images.mlosun.com/BlogImages/20200828130012.png
+https://cdn.jsdelivr.net/gh/mlosun/My_images@main/BlogImages/20200828130012.png
 </code></pre></div><h1 id="六参考资料">六、参考资料</h1>
 <ul>
 <li><a href="https://shanya.world/archives/2fb4d43a.html">VSCode + Github + Picgo + jsDelivr 搭建稳定快速高效图床</a></li>
