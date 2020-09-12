@@ -6,19 +6,10 @@
     <description>Recent content in vscode on 洛森博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 12 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.mlosun.com/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>翻译｜使用Finances 2记账导入账单</title>
-      <link>https://www.mlosun.com/posts/translate-finances-2-import/</link>
-      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mlosun.com/posts/translate-finances-2-import/</guid>
-      <description>最近在探索个人复式记账，除了当前流行的纯文本的复式记账Beancount外，也找到了可视化的Finances 2（via），尝试使用使用了两天后也很方便，日常使用非常简单，但导入导出恐怕是迁移历史记账数</description>
-    </item>
     
     <item>
       <title>使用VS Code&#43;PicGo&#43;Github打造好用的博客图床</title>
